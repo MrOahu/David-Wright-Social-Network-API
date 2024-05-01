@@ -1,20 +1,25 @@
 const { Schema, Types } = require('mongoose');
 
-const assignmentSchema = new Schema(
+const reactionSchema = new Schema(
   {
-    assignmentId: {
+    reactionId: {
       type: Schema.Types.ObjectId,
       default: () => new Types.ObjectId(),
     },
-    assignmentName: {
-
+    reactionBody: {
+      type: String,
+      required: true,
+      max_length: 280
     },
-    score: {
+    username: {
+      type: String,
+      required: true
  
     },
     createdAt: {
       type: Date,
       default: Date.now,
+      // add getter to format timestamp
     },
   },
   {
@@ -25,4 +30,4 @@ const assignmentSchema = new Schema(
   }
 );
 
-module.exports = assignmentSchema;
+module.exports = reactionSchema;

@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-
+const reactionSchema = require("./Reaction")
 // Schema to create a thought model
 const thoughtSchema = new Schema(
   {
@@ -18,7 +18,7 @@ const thoughtSchema = new Schema(
       required: true
     },
     reactions: [
-      
+      reactionSchema
     ],
   },
   {
