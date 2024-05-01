@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 
 
-// Schema to create Student model
+// Schema to create the User model
 const userSchema = new Schema(
   {
     username: {
