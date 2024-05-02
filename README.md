@@ -6,7 +6,7 @@ Create an API for a social network application that enables users to share their
 
 ## Technologies Used
 
-Express.js, MongoDB, Mongoose, JavaScript
+JavaScript, Express.js, Insomnia, MongoDB, Mongoose
 
 ## URLs
 
