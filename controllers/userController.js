@@ -62,7 +62,30 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-  
+  async addFriend(req, res){
+    try{
+    const user = User.findOneAndUpdate(
+      {_id: req.params.userId},
+      {$push: {friends:req.params.friendId}},
+      {new: true}
+    )
+    res.json(user)
+  } catch(err){
+    res.status(400).json(err)
+  }
+  },
+  async removeFriend(req, res){
+    try{
+    const user = User.findOneAndUpdate(
+      {_id: req.params.userId},
+      {$pull: {friends:req.params.friendId}},
+      {new: true}
+    )
+    res.json(user)
+  } catch(err){
+    res.status(400).json(err)
+  }
+  },
 
 
 
