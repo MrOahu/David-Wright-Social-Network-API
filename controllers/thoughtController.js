@@ -4,8 +4,8 @@ const { Student, Course } = require('../models');
 // Aggregate function to get the number of students overall
 const headCount = async () => {
   const numberOfStudents = await Student.aggregate()
-    .count('studentCount');
-  return numberOfStudents;
+    .count('thoughtCount');
+  return numberOfThoughts;
 }
 
 // Aggregate function for getting the overall grade using $avg
