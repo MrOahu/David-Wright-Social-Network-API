@@ -2,7 +2,7 @@
 
 ## Description
 
-## Technologies Used:
+## Technologies Used
 
 ## URLs
 
