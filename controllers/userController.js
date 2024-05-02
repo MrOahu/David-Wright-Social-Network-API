@@ -1,5 +1,6 @@
 const { User } = require('../models');
 
+
 module.exports = {
   // Get all users
   async getUsers(req, res) {
@@ -23,47 +24,46 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-  // Create a course
-  async createCourse(req, res) {
+  // Create a user
+  async createUser(req, res) {
     try {
-      const course = await Course.create(req.body);
-      res.json(course);
+      const user = await User.create(req.body);
+      res.json(user);
     } catch (err) {
       console.log(err);
       return res.status(500).json(err);
     }
   },
-  // Delete a course
-  async deleteCourse(req, res) {
+  // Delete a user
+  async deleteUser(req, res) {
     try {
-      const course = await Course.findOneAndDelete({ _id: req.params.courseId });
-
-      if (!course) {
-        res.status(404).json({ message: 'No course with that ID' });
-      }
-
-      await Student.deleteMany({ _id: { $in: course.students } });
-      res.json({ message: 'Course and students deleted!' });
+      const user = await User.findOneAndDelete({ _id: req.params.userId });
+  
+      res.json({ message: 'User deleted!' });
     } catch (err) {
       res.status(500).json(err);
     }
   },
-  // Update a course
-  async updateCourse(req, res) {
+  // Update a user
+  async updateUser(req, res) {
     try {
-      const course = await Course.findOneAndUpdate(
-        { _id: req.params.courseId },
+      const user = await User.findOneAndUpdate(
+        { _id: req.params.userId },
         { $set: req.body },
         { runValidators: true, new: true }
       );
 
-      if (!course) {
-        res.status(404).json({ message: 'No course with this id!' });
+      if (!user) {
+        res.status(404).json({ message: 'No user with this id!' });
       }
 
-      res.json(course);
+      res.json(user);
     } catch (err) {
       res.status(500).json(err);
     }
   },
+  
+
+
+
 };
