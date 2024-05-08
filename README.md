@@ -10,7 +10,7 @@ JavaScript, Express.js, Insomnia, MongoDB, Mongoose
 
 ## URLs
 
-Walkthrough Video Link URL:
+Walkthrough Video Link URL: https://drive.google.com/file/d/1u5JaoDzvH3VFJJnkgup1kcrkpvkWJXCO/view
 
 GitHub Repository Link URL: https://github.com/MrOahu/David-Wright-Social-Network-API
 
